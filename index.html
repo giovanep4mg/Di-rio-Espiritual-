@@ -21,7 +21,7 @@
 
     <!-- Cabeçalho -->
     <header class="bg-white/80 backdrop-blur-md border-b border-stone-200 sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-3">
             <div class="flex items-center space-x-3">
                 <div class="w-10 h-10 rounded-full bg-amber-800 text-white flex items-center justify-center font-serif-custom font-bold text-lg shadow-sm">
                     ✝
@@ -32,12 +32,15 @@
                 </div>
             </div>
             
-            <div class="flex items-center space-x-2">
-                <button onclick="mudarAba('novo')" id="btnNovo" class="px-4 py-2 text-sm font-medium rounded-lg bg-amber-900 text-white shadow-sm transition-all hover:bg-amber-950">
-                    ✏️ Novo Registro
+            <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto w-full sm:w-auto justify-center">
+                <button onclick="mudarAba('novo')" id="btnNovo" class="px-3 py-2 text-xs sm:text-sm font-medium rounded-lg bg-amber-900 text-white shadow-sm transition-all hover:bg-amber-950">
+                    ✏️ Novo
                 </button>
-                <button onclick="mudarAba('historico')" id="btnHistorico" class="px-4 py-2 text-sm font-medium rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all">
+                <button onclick="mudarAba('historico')" id="btnHistorico" class="px-3 py-2 text-xs sm:text-sm font-medium rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all">
                     📚 Histórico
+                </button>
+                <button onclick="mudarAba('comoComecar')" id="btnComoComecar" class="px-3 py-2 text-xs sm:text-sm font-medium rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all">
+                    💡 Como Começar
                 </button>
             </div>
         </div>
@@ -65,7 +68,7 @@
                     <!-- Trecho Lido -->
                     <div>
                         <label for="trechoLido" class="block text-sm font-semibold text-stone-700 mb-1">📖 Trecho Bíblico Lido</label>
-                        <input type="text" id="trechoLido" placeholder="Ex: João 3, 1-16 / Salmo 23" class="w-full bg-stone-50 border border-stone-200 rounded-lg px-4 py-3 text-stone-800 placeholder-stone-400 focus:ring-2 focus:ring-amber-800 outline-none">
+                        <input type="text" id="trechoLido" placeholder="Ex: 1 João 1, 1-10 / Salmo 23" class="w-full bg-stone-50 border border-stone-200 rounded-lg px-4 py-3 text-stone-800 placeholder-stone-400 focus:ring-2 focus:ring-amber-800 outline-none">
                     </div>
 
                     <!-- A Promessa -->
@@ -117,6 +120,65 @@
             </div>
         </section>
 
+        <!-- ABA 3: COMO COMEÇAR (MÉTODO PE. JONAS) -->
+        <section id="abaComoComecar" class="hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-200 space-y-6">
+                <div>
+                    <span class="text-xs font-semibold px-2.5 py-1 bg-amber-100 text-amber-900 rounded-md uppercase tracking-wider">Orientações Práticas</span>
+                    <h2 class="font-serif-custom text-2xl font-bold text-stone-900 mt-2">Como Fazer o Diário Espiritual</h2>
+                    <p class="text-sm text-stone-600 mt-1">Baseado nos ensinamentos do Monsenhor Jonas Abib em "A Bíblia no meu dia a dia".</p>
+                </div>
+
+                <div class="space-y-4 text-stone-700 text-sm leading-relaxed">
+                    <!-- Passo 1 -->
+                    <div class="p-4 bg-amber-50/60 rounded-xl border border-amber-200/60 space-y-2">
+                        <h3 class="font-bold text-amber-900 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-amber-900 text-white flex items-center justify-center text-xs">1</span>
+                            Por onde começar a leitura?
+                        </h3>
+                        <p>O Pe. Jonas orientava a começar pelo <strong>Novo Testamento</strong>, pois nos coloca diretamente na vivência com Jesus e na Igreja nascente. A recomendação clássica é iniciar pela <strong>Primeira Carta de São João</strong>.</p>
+                    </div>
+
+                    <!-- Passo 2 -->
+                    <div class="p-4 bg-emerald-50/60 rounded-xl border border-emerald-200/60 space-y-2">
+                        <h3 class="font-bold text-emerald-900 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-emerald-800 text-white flex items-center justify-center text-xs">2</span>
+                            A Regra de Ouro: Leia, releia e aprofunde
+                        </h3>
+                        <p>Não tenha pressa de terminar a Bíblia rapidamente. Se necessário, <strong>leia o mesmo trecho mais de uma vez</strong> (por exemplo, leia a 1ª Carta de São João inteira nos primeiros dias, e depois volte a relê-la com calma). A Palavra precisa penetrar no coração, não apenas passar pelos olhos.</p>
+                    </div>
+
+                    <!-- Passo 3 -->
+                    <div class="p-4 bg-sky-50/60 rounded-xl border border-sky-200/60 space-y-2">
+                        <h3 class="font-bold text-sky-900 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-sky-800 text-white flex items-center justify-center text-xs">3</span>
+                            Preencha os Três Pilares com simplicidade
+                        </h3>
+                        <ul class="list-disc pl-5 space-y-1 text-stone-700">
+                            <li><strong>A Promessa:</strong> O que Deus está se comprometendo a fazer na minha vida através deste versículo?</li>
+                            <li><strong>A Ordem:</strong> O que Ele está me mandando mudar, fazer ou deixar de fazer hoje?</li>
+                            <li><strong>O Princípio Eterno:</strong> Qual atributo de Deus ou verdade sobre o Seu Reino transparece aqui?</li>
+                        </ul>
+                    </div>
+
+                    <!-- Passo 4 -->
+                    <div class="p-4 bg-purple-50/60 rounded-xl border border-purple-200/60 space-y-2">
+                        <h3 class="font-bold text-purple-900 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-purple-800 text-white flex items-center justify-center text-xs">4</span>
+                            Constância acima de perfeição
+                        </h3>
+                        <p>O segredo do Diário Espiritual não é a extensão do que você escreve, mas a **fidelidade diária**. Mesmo que escreva poucas linhas, o importante é abrir o coração para escutar o Senhor todos os dias.</p>
+                    </div>
+                </div>
+
+                <div class="pt-2 text-center">
+                    <button onclick="mudarAba('novo')" class="px-6 py-2.5 bg-amber-900 hover:bg-amber-950 text-white font-medium rounded-xl text-sm shadow-sm transition-all">
+                        Começar a Escrever Hoje ✏️
+                    </button>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Rodapé -->
@@ -132,20 +194,31 @@
         function mudarAba(aba) {
             const btnNovo = document.getElementById('btnNovo');
             const btnHistorico = document.getElementById('btnHistorico');
+            const btnComoComecar = document.getElementById('btnComoComecar');
+            
             const abaNovo = document.getElementById('abaNovo');
             const abaHistorico = document.getElementById('abaHistorico');
+            const abaComoComecar = document.getElementById('abaComoComecar');
+
+            // Reset classes
+            btnNovo.className = "px-3 py-2 text-xs sm:text-sm font-medium rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all";
+            btnHistorico.className = "px-3 py-2 text-xs sm:text-sm font-medium rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all";
+            btnComoComecar.className = "px-3 py-2 text-xs sm:text-sm font-medium rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all";
+
+            abaNovo.classList.add('hidden');
+            abaHistorico.classList.add('hidden');
+            abaComoComecar.classList.add('hidden');
 
             if (aba === 'novo') {
-                btnNovo.className = "px-4 py-2 text-sm font-medium rounded-lg bg-amber-900 text-white shadow-sm transition-all hover:bg-amber-950";
-                btnHistorico.className = "px-4 py-2 text-sm font-medium rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all";
+                btnNovo.className = "px-3 py-2 text-xs sm:text-sm font-medium rounded-lg bg-amber-900 text-white shadow-sm transition-all hover:bg-amber-950";
                 abaNovo.classList.remove('hidden');
-                abaHistorico.classList.add('hidden');
-            } else {
-                btnHistorico.className = "px-4 py-2 text-sm font-medium rounded-lg bg-amber-900 text-white shadow-sm transition-all hover:bg-amber-950";
-                btnNovo.className = "px-4 py-2 text-sm font-medium rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all";
+            } else if (aba === 'historico') {
+                btnHistorico.className = "px-3 py-2 text-xs sm:text-sm font-medium rounded-lg bg-amber-900 text-white shadow-sm transition-all hover:bg-amber-950";
                 abaHistorico.classList.remove('hidden');
-                abaNovo.classList.add('hidden');
                 renderizarHistorico();
+            } else if (aba === 'comoComecar') {
+                btnComoComecar.className = "px-3 py-2 text-xs sm:text-sm font-medium rounded-lg bg-amber-900 text-white shadow-sm transition-all hover:bg-amber-950";
+                abaComoComecar.classList.remove('hidden');
             }
         }
 
